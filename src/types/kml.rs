@@ -10,11 +10,11 @@ use regex::Regex;
 
 use undrift_gps::gcj_to_wgs;
 
-use crate::utils::is_coordinate_out_of_china;
+use crate::utils::is_coordinate_in_china;
 
-fn is_coordinate(name: &str) -> bool {
+fn is_coordinate(coordinate: &str) -> bool {
     if let Ok(regex) = Regex::new(r"((\d+).(\d+),){2} *((\d+).(\d+))") {
-        if regex.is_match(name) {
+        if regex.is_match(coordinate) {
             return true;
         }
     }
@@ -47,7 +47,7 @@ pub fn convert(document: &str) -> Result<String, Box<dyn std::error::Error>> {
                     let longitude = v[0].parse::<f64>()?;
                     let latitude = v[1].parse::<f64>()?;
 
-                    if is_coordinate_out_of_china(longitude, latitude) {
+                    if !is_coordinate_in_china(longitude, latitude) {
                         continue;
                     }
 
