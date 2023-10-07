@@ -1,2 +1,2 @@
-pub mod types;
+pub mod core;
 mod utils;
