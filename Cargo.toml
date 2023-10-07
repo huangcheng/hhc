@@ -1,6 +1,6 @@
 [package]
 name = "hhc"
-version = "0.1.0"
+version = "0.1.1"
 description = "The hhc tool is a command-line utility designed for the conversion of data exported from Huawei Health, specifically from GCJ-02 coordinate system to WGS84."
 authors = ["HUANG Cheng <cheng@duck.com>"]
 edition = "2021"
