@@ -12,7 +12,7 @@ use super::Doc;
 
 use crate::utils::is_coordinates_in_china;
 
-pub struct Document {}
+pub struct Document;
 
 impl Document {
     const TAG_NAME_LATITUDE: &'static str = "LatitudeDegrees";

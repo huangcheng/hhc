@@ -14,7 +14,7 @@ use super::Doc;
 
 use crate::utils::is_coordinates_in_china;
 
-pub struct Document {}
+pub struct Document;
 
 impl Document {
     fn is_coordinates(coordinates: &str) -> bool {
@@ -44,7 +44,7 @@ impl Doc for Document {
             match reader_event {
                 Characters(text) => {
                     if Self::is_coordinates(&text) {
-                        let mut v: Vec<&str> = text.split(",").map(|s| s.trim()).collect();
+                        let mut v: Vec<&str> = text.split(',').map(|s| s.trim()).collect();
 
                         let longitude = v[0].parse::<f64>()?;
                         let latitude = v[1].parse::<f64>()?;

@@ -15,8 +15,8 @@ mod cli;
 
 use cli::Args;
 
-const FILE_EXTENSIONS: [&'static str; 3] = ["gpx", "kml", "tcx"];
-const FILE_PREFIX: &'static str = "_converted";
+const FILE_EXTENSIONS: [&str; 3] = ["gpx", "kml", "tcx"];
+const FILE_PREFIX: &str = "_converted";
 
 struct File {
     path: String,
