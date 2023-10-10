@@ -8,8 +8,8 @@ use std::thread::JoinHandle;
 
 use clap::Parser;
 
-use hhc::core::Doc;
-use hhc::core::{gpx, kml, tcx};
+use libhhc::core::Doc;
+use libhhc::core::{gpx, kml, tcx};
 
 mod cli;
 
