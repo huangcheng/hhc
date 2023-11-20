@@ -12,10 +12,13 @@ jobs:
         include:
           - target: x86_64-pc-windows-gnu
             archive: zip
+            version: stable
           - target: x86_64-unknown-linux-musl
             archive: tar.gz tar.xz tar.zst
+            version: stable
           - target: x86_64-apple-darwin
             archive: zip
+            version: stable
     steps:
       - uses: actions/checkout@master
       - name: Compile and release
@@ -25,3 +28,4 @@ jobs:
         with:
           RUSTTARGET: ${{ matrix.target }}
           ARCHIVE_TYPES: ${{ matrix.archive }}
+          TOOLCHAIN_VERSION: ${{ matrix.version }}
